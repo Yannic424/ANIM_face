@@ -1,0 +1,60 @@
+body {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: rgb(46, 44, 44);
+}
+
+svg {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+    animation: idle 1.5s linear infinite;
+}
+
+@keyframes idle {
+    10% {
+        transform: translate(-150px, 0px);
+    }
+
+    20% {}
+
+    30% {}
+
+    40% {}
+
+    50% {
+        transform: translate(-150px, -8px);
+    }
+
+    60% {}
+
+    70% {}
+
+    80% {}
+
+    90% {}
+
+    100% {
+        transform: translate(-150px, 0px);
+    }
+}
+
+#eyepillLeft,
+#eyepillRight {
+    color: red;
+    cursor: none;
+    transition: cursor 0.1s;
+}

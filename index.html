@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIM | Face</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div id="container">
+        <svg id="svg" width="300" height="300">
+            <!-- Définition des masques pour les yeux -->
+            <defs>
+                <mask id="eyeMaskLeft">
+                    <path d="M 60,150 A 20,20 0 0,1 140,150" fill="white" />
+                </mask>
+                <mask id="eyeMaskRight">
+                    <path d="M 160,150 A 20,20 0 0,1 240,150" fill="white" />
+                </mask>
+            </defs>
+
+            <!-- FACE -->
+            <polygon points="25,0 275,0 300,300 0,300" style="fill:bisque;" />
+
+
+            <!-- EYES (Masques appliqués) -->
+            <path d="M 60,150 A 20,20 0 0,1 140,150" fill="white" />
+            <path d="M 160,150 A 20,20 0 0,1 240,150" fill="white" />
+
+            <!-- EYEPILLS (avec masques) -->
+            <circle id="eyepillLeft" cx="100" cy="135" r="10" fill="black" mask="url(#eyeMaskLeft)" />
+            <circle id="eyepillRight" cx="200" cy="135" r="10" fill="black" mask="url(#eyeMaskRight)" />
+
+            <!-- MOUTH -->
+            <polygon id="mouthTriangle" points="150,260 100,200 200,200" style="fill:black;" />
+            <circle id="mouthCircle" cx="150" cy="220" r="30" fill="black" style="display:none;" />
+
+            <!-- SMILE MOUTH (initially hidden) -->
+            <path id="smileMouth" d="M 100,220 Q 150,270 200,220" stroke="black" stroke-width="10" fill="none"
+                style="display:none;" />
+        </svg>
+    </div>
+
+
+    <script src="main.js"></script>
+</body>
+
+</html>
