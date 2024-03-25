@@ -5,7 +5,7 @@ svgElement.addEventListener('mousemove', function (event) {
     const mouseX = event.clientX - svgRect.left;
     const mouseY = event.clientY - svgRect.top;
 
-    console.log("X = " + Math.round(mouseX) + "\nY = " + Math.round(mouseY));
+    // console.log("X = " + Math.round(mouseX) + "\nY = " + Math.round(mouseY));
 
     moveEyepill(mouseX, mouseY, 'eyepillLeft', 100, 135, 145);
     moveEyepill(mouseX, mouseY, 'eyepillRight', 200, 135, 145);
@@ -61,15 +61,14 @@ document.getElementById('svg').addEventListener('mousemove', function (event) {
 
 
 
-document.getElementById('svg').addEventListener('mousedown', function () {
-    document.getElementById('smileMouth').style.display = '';
-    // Hide the other mouths if necessary
-    document.getElementById('mouthTriangle').style.display = 'none';
-    document.getElementById('mouthCircle').style.display = 'none';
-});
+svgElement.addEventListener('click', function (event) {
+    svgElement.classList.toggle('spin');
 
-document.getElementById('svg').addEventListener('mouseup', function () {
-    document.getElementById('smileMouth').style.display = 'none';
-    // You can decide whether to show the default mouth again here
+    svgElement.addEventListener('animationend', function (event) {
+        if (event.animationName === 'spin') {
+            svgElement.classList.remove('spin');
+            svgElement.classList.add('idle');
+        }
+    });
 });
 

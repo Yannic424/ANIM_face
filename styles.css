@@ -21,6 +21,9 @@ svg {
     left: 50%;
     transform: translateX(-50%);
     cursor: pointer;
+}
+
+.idle {
     animation: idle 1.5s linear infinite;
 }
 
@@ -54,7 +57,49 @@ svg {
 
 #eyepillLeft,
 #eyepillRight {
-    color: red;
     cursor: none;
     transition: cursor 0.1s;
+}
+
+.spin {
+    animation: spin .5s linear;
+    transform-origin: left;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) translate(-150px) scale(100%);
+    }
+
+    15% {
+        transform: rotate(-30deg) translate(-190px) scale(120%);
+    }
+
+    20% {
+        transform: rotate(0deg) translate(-150px) scale(100%);
+    }
+
+    30% {}
+
+    40% {}
+
+    50% {
+        transform: rotate(180deg) translate(-100px) scale(60%);
+    }
+
+    60% {}
+
+    70% {}
+
+    90% {
+        transform: rotate(360deg) translate(-150px) scale(100%);
+    }
+
+    95% {
+        transform: rotate(375deg) translate(-150px);
+    }
+
+    100% {
+        transform: rotate(360deg) translate(-150px);
+    }
 }
